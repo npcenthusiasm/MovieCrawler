@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCrawler", "MovieCrawler\MovieCrawler.csproj", "{CFAE4FBC-E9B1-4807-BE07-F3D5A68A94CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFAE4FBC-E9B1-4807-BE07-F3D5A68A94CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFAE4FBC-E9B1-4807-BE07-F3D5A68A94CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFAE4FBC-E9B1-4807-BE07-F3D5A68A94CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFAE4FBC-E9B1-4807-BE07-F3D5A68A94CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F693342A-512A-48F1-BBB0-03D47741CAD0}
+	EndGlobalSection
+EndGlobal
