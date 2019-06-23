@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MovieCrawlerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MovieInfo">
+          <Key>
+            <PropertyRef Name="MovieInfoID" />
+          </Key>
+          <Property Name="MovieInfoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TheaterID" Type="int" />
+          <Property Name="MovieTheater" Type="nvarchar" MaxLength="20" />
+          <Property Name="MovieID" Type="int" />
+          <Property Name="MovieName" Type="nvarchar" MaxLength="20" />
+          <Property Name="MovieDaytime" Type="nvarchar" MaxLength="20" />
+          <Property Name="MovieImg" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="MovieList">
+          <Key>
+            <PropertyRef Name="MovieListID" />
+          </Key>
+          <Property Name="MovieListID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MovieID" Type="nvarchar" MaxLength="20" />
+          <Property Name="MovieName" Type="nvarchar" MaxLength="20" />
+          <Property Name="MovieImg" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityContainer Name="MovieCrawlerModelStoreContainer">
+          <EntitySet Name="MovieInfo" EntityType="Self.MovieInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MovieList" EntityType="Self.MovieList" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MovieCrawlerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MovieCrawlerEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MovieLists" EntityType="MovieCrawlerModel.MovieList" />
+          <EntitySet Name="MovieInfoes" EntityType="MovieCrawlerModel.MovieInfo" />
+        </EntityContainer>
+        <EntityType Name="MovieList">
+          <Key>
+            <PropertyRef Name="MovieListID" />
+          </Key>
+          <Property Name="MovieListID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MovieID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MovieName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MovieImg" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MovieInfo">
+          <Key>
+            <PropertyRef Name="MovieInfoID" />
+          </Key>
+          <Property Name="MovieInfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TheaterID" Type="Int32" />
+          <Property Name="MovieTheater" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MovieID" Type="Int32" />
+          <Property Name="MovieName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MovieDaytime" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MovieImg" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MovieCrawlerModelStoreContainer" CdmEntityContainer="MovieCrawlerEntities">
+          <EntitySetMapping Name="MovieLists">
+            <EntityTypeMapping TypeName="MovieCrawlerModel.MovieList">
+              <MappingFragment StoreEntitySet="MovieList">
+                <ScalarProperty Name="MovieImg" ColumnName="MovieImg" />
+                <ScalarProperty Name="MovieName" ColumnName="MovieName" />
+                <ScalarProperty Name="MovieID" ColumnName="MovieID" />
+                <ScalarProperty Name="MovieListID" ColumnName="MovieListID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MovieInfoes">
+            <EntityTypeMapping TypeName="MovieCrawlerModel.MovieInfo">
+              <MappingFragment StoreEntitySet="MovieInfo">
+                <ScalarProperty Name="MovieImg" ColumnName="MovieImg" />
+                <ScalarProperty Name="MovieDaytime" ColumnName="MovieDaytime" />
+                <ScalarProperty Name="MovieName" ColumnName="MovieName" />
+                <ScalarProperty Name="MovieID" ColumnName="MovieID" />
+                <ScalarProperty Name="MovieTheater" ColumnName="MovieTheater" />
+                <ScalarProperty Name="TheaterID" ColumnName="TheaterID" />
+                <ScalarProperty Name="MovieInfoID" ColumnName="MovieInfoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

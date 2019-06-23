@@ -43,7 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -88,19 +96,184 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="image\film_20190411020.jpg" />
+    <Content Include="image\film_20190418020.jpg" />
+    <Content Include="image\film_20190514001.jpg" />
+    <Content Include="image\film_20190517001.jpg" />
+    <Content Include="image\film_20190521015.jpg" />
+    <Content Include="image\film_20190524001.jpg" />
+    <Content Include="image\film_20190527001.jpg" />
+    <Content Include="image\film_20190603019.jpg" />
+    <Content Include="image\film_20190610001.jpg" />
+    <Content Include="image\film_20190610002.jpg" />
+    <Content Include="image\film_20190612012.jpg" />
+    <Content Include="image\film_20190612013.jpg" />
+    <Content Include="image\film_20190613001.jpg" />
+    <Content Include="image\film_20190613002.jpg" />
+    <Content Include="image\film_20190614001.jpg" />
+    <Content Include="image\film_20190614007.jpg" />
+    <Content Include="image\film_20190617001.jpg" />
+    <Content Include="image\film_20190620001.jpg" />
+    <Content Include="Models\MovieCrawlerDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MovieCrawlerDB.Context.cs</LastGenOutput>
+      <DependentUpon>MovieCrawlerDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\MovieCrawlerDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MovieCrawlerDB.edmx</DependentUpon>
+      <LastGenOutput>MovieCrawlerDB.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\MovieCrawlerDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MovieCrawlerDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\MovieCrawlerDB.edmx.diagram">
+      <DependentUpon>MovieCrawlerDB.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="TheEvent\contactform\contactform.js" />
+    <Content Include="TheEvent\contactform\Readme.txt" />
+    <Content Include="TheEvent\css\scss-files.txt" />
+    <Content Include="TheEvent\css\style.css" />
+    <Content Include="TheEvent\img\about-bg.jpg" />
+    <Content Include="TheEvent\img\apple-touch-icon.png" />
+    <Content Include="TheEvent\img\favicon.png" />
+    <Content Include="TheEvent\img\gallery\1.jpg" />
+    <Content Include="TheEvent\img\gallery\2.jpg" />
+    <Content Include="TheEvent\img\gallery\3.jpg" />
+    <Content Include="TheEvent\img\gallery\4.jpg" />
+    <Content Include="TheEvent\img\gallery\5.jpg" />
+    <Content Include="TheEvent\img\gallery\6.jpg" />
+    <Content Include="TheEvent\img\gallery\7.jpg" />
+    <Content Include="TheEvent\img\gallery\8.jpg" />
+    <Content Include="TheEvent\img\hotels\1.jpg" />
+    <Content Include="TheEvent\img\hotels\2.jpg" />
+    <Content Include="TheEvent\img\hotels\3.jpg" />
+    <Content Include="TheEvent\img\intro-bg.jpg" />
+    <Content Include="TheEvent\img\logo.png" />
+    <Content Include="TheEvent\img\speakers\1.jpg" />
+    <Content Include="TheEvent\img\speakers\2.jpg" />
+    <Content Include="TheEvent\img\speakers\3.jpg" />
+    <Content Include="TheEvent\img\speakers\4.jpg" />
+    <Content Include="TheEvent\img\speakers\5.jpg" />
+    <Content Include="TheEvent\img\speakers\6.jpg" />
+    <Content Include="TheEvent\img\speakers\bizpage-preview.png" />
+    <Content Include="TheEvent\img\subscribe-bg.jpg" />
+    <Content Include="TheEvent\img\supporters\1.png" />
+    <Content Include="TheEvent\img\supporters\2.png" />
+    <Content Include="TheEvent\img\supporters\3.png" />
+    <Content Include="TheEvent\img\supporters\4.png" />
+    <Content Include="TheEvent\img\supporters\5.png" />
+    <Content Include="TheEvent\img\supporters\6.png" />
+    <Content Include="TheEvent\img\supporters\7.png" />
+    <Content Include="TheEvent\img\supporters\8.png" />
+    <Content Include="TheEvent\img\venue-gallery\1.jpg" />
+    <Content Include="TheEvent\img\venue-gallery\2.jpg" />
+    <Content Include="TheEvent\img\venue-gallery\3.jpg" />
+    <Content Include="TheEvent\img\venue-gallery\4.jpg" />
+    <Content Include="TheEvent\img\venue-gallery\5.jpg" />
+    <Content Include="TheEvent\img\venue-gallery\6.jpg" />
+    <Content Include="TheEvent\img\venue-gallery\7.jpg" />
+    <Content Include="TheEvent\img\venue-gallery\8.jpg" />
+    <Content Include="TheEvent\img\venue-info-bg.jpg" />
+    <Content Include="TheEvent\index.html" />
+    <Content Include="TheEvent\js\jquery-3.3.1.min.js" />
+    <Content Include="TheEvent\js\main.js" />
+    <Content Include="TheEvent\lib\animate\animate.css" />
+    <Content Include="TheEvent\lib\animate\animate.min.css" />
+    <Content Include="TheEvent\lib\bootstrap\css\bootstrap.css" />
+    <Content Include="TheEvent\lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="TheEvent\lib\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="TheEvent\lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="TheEvent\lib\easing\easing.js" />
+    <Content Include="TheEvent\lib\easing\easing.min.js" />
+    <Content Include="TheEvent\lib\font-awesome\css\font-awesome.css" />
+    <Content Include="TheEvent\lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="TheEvent\lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="TheEvent\lib\jquery\jquery-migrate.min.js" />
+    <Content Include="TheEvent\lib\jquery\jquery.min.js" />
+    <Content Include="TheEvent\lib\owlcarousel\assets\ajax-loader.gif" />
+    <Content Include="TheEvent\lib\owlcarousel\assets\owl.carousel.css" />
+    <Content Include="TheEvent\lib\owlcarousel\assets\owl.carousel.min.css" />
+    <Content Include="TheEvent\lib\owlcarousel\assets\owl.theme.default.css" />
+    <Content Include="TheEvent\lib\owlcarousel\assets\owl.theme.default.min.css" />
+    <Content Include="TheEvent\lib\owlcarousel\assets\owl.theme.green.css" />
+    <Content Include="TheEvent\lib\owlcarousel\assets\owl.theme.green.min.css" />
+    <Content Include="TheEvent\lib\owlcarousel\assets\owl.video.play.png" />
+    <Content Include="TheEvent\lib\owlcarousel\owl.carousel.js" />
+    <Content Include="TheEvent\lib\owlcarousel\owl.carousel.min.js" />
+    <Content Include="TheEvent\lib\superfish\hoverIntent.js" />
+    <Content Include="TheEvent\lib\superfish\superfish.js" />
+    <Content Include="TheEvent\lib\superfish\superfish.min.js" />
+    <Content Include="TheEvent\lib\venobox\venobox.css" />
+    <Content Include="TheEvent\lib\venobox\venobox.js" />
+    <Content Include="TheEvent\lib\venobox\venobox.min.js" />
+    <Content Include="TheEvent\lib\wow\wow.js" />
+    <Content Include="TheEvent\lib\wow\wow.min.js" />
+    <Content Include="TheEvent\Readme.txt" />
+    <Content Include="TheEvent\speaker-details.html" />
     <Content Include="Web.config" />
+    <Content Include="TheEvent\lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="TheEvent\lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="TheEvent\lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="TheEvent\lib\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="TheEvent\lib\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="TheEvent\lib\owlcarousel\LICENSE" />
+    <Content Include="Views\Home\Detail.cshtml" />
+    <Content Include="Views\Home\items.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MovieCrawlerDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MovieCrawlerDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MovieCrawlerDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MovieCrawlerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MovieCrawlerDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MovieCrawlerDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MovieInfo.cs">
+      <DependentUpon>MovieCrawlerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MovieList.cs">
+      <DependentUpon>MovieCrawlerDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -110,8 +283,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
