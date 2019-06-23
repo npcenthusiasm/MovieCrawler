@@ -39,9 +39,13 @@ namespace MovieCrawler.Controllers
             return new JsonResult { Data = movieList, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
-        public ActionResult Detail()
+        public ActionResult Detail(int MovieID )
         {
-            return View();
+            var query = from o in db.MovieLists
+                        where o.MovieID == MovieID
+                        select o;
+            var MovieInfo = query.FirstOrDefault();
+            return View(MovieInfo);
         }
     }
 }

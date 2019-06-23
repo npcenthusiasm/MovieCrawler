@@ -1,8 +1,69 @@
-﻿
+﻿@model MovieCrawler.Models.MovieList
 @{
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Detail</h2>
+<main id="main" class="main-page">
+
+    <!--==========================
+      Speaker Details Section
+    ============================-->
+    <section id="speakers-details" class="wow fadeIn">
+        <div class="container">
+            <div class="section-header">
+                <h2>電影資訊</h2>
+                <p>劇情簡介</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="~/image/@Model.MovieImg" alt="Speaker 1" class="img-fluid">
+                </div>
+
+                <div class="col-md-6">
+                    <div class="details">
+                        <h2>@Model.MovieName</h2>
+                        <br />
+                        <h4>劇情簡介 /ABOUT THE STORY</h4>
+                        @*<div class="social">
+                                <a href=""><i class="fa fa-twitter"></i></a>
+                                <a href=""><i class="fa fa-facebook"></i></a>
+                                <a href=""><i class="fa fa-google-plus"></i></a>
+                                <a href=""><i class="fa fa-linkedin"></i></a>
+                            </div>*@
+                        <p>@Model.MovieDetail_1</p>
+                        <br />
+                        <p>@Model.MovieDetail_2</p>
+                        <br />
+                        <p>@Model.MovieDetail_3</p>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--==========================
+      Venue Section
+    ============================-->
+    @*<section id="venue" class="wow fadeInUp">
+
+        <div class="container-fluid venue-gallery-container">
+            <div class="row no-gutters">
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="venue-gallery">
+                        <a href="img/venue-gallery/1.jpg" class="venobox" data-gall="venue-gallery">
+                            <img src="~/TheEvent/img/venue-gallery/1.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>*@
+
+</main>
+
 

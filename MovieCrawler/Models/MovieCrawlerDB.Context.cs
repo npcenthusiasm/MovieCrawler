@@ -25,7 +25,7 @@ namespace MovieCrawler.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<MovieList> MovieLists { get; set; }
         public virtual DbSet<MovieInfo> MovieInfoes { get; set; }
+        public virtual DbSet<MovieList> MovieLists { get; set; }
     }
 }

@@ -15,8 +15,11 @@ namespace MovieCrawler.Models
     public partial class MovieList
     {
         public int MovieListID { get; set; }
-        public string MovieID { get; set; }
+        public Nullable<int> MovieID { get; set; }
         public string MovieName { get; set; }
         public string MovieImg { get; set; }
+        public string MovieDetail_1 { get; set; }
+        public string MovieDetail_2 { get; set; }
+        public string MovieDetail_3 { get; set; }
     }
 }

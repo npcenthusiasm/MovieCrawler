@@ -22,9 +22,12 @@
             <PropertyRef Name="MovieListID" />
           </Key>
           <Property Name="MovieListID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="MovieID" Type="nvarchar" MaxLength="20" />
+          <Property Name="MovieID" Type="int" />
           <Property Name="MovieName" Type="nvarchar" MaxLength="20" />
           <Property Name="MovieImg" Type="nvarchar" MaxLength="30" />
+          <Property Name="MovieDetail_1" Type="nvarchar(max)" />
+          <Property Name="MovieDetail_2" Type="nvarchar(max)" />
+          <Property Name="MovieDetail_3" Type="nvarchar(max)" />
         </EntityType>
         <EntityContainer Name="MovieCrawlerModelStoreContainer">
           <EntitySet Name="MovieInfo" EntityType="Self.MovieInfo" Schema="dbo" store:Type="Tables" />
@@ -35,18 +38,9 @@
     <edmx:ConceptualModels>
       <Schema Namespace="MovieCrawlerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="MovieCrawlerEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="MovieLists" EntityType="MovieCrawlerModel.MovieList" />
           <EntitySet Name="MovieInfoes" EntityType="MovieCrawlerModel.MovieInfo" />
+          <EntitySet Name="MovieLists" EntityType="MovieCrawlerModel.MovieList" />
         </EntityContainer>
-        <EntityType Name="MovieList">
-          <Key>
-            <PropertyRef Name="MovieListID" />
-          </Key>
-          <Property Name="MovieListID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MovieID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="MovieName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="MovieImg" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="MovieInfo">
           <Key>
             <PropertyRef Name="MovieInfoID" />
@@ -59,22 +53,24 @@
           <Property Name="MovieDaytime" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="MovieImg" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="MovieList">
+          <Key>
+            <PropertyRef Name="MovieListID" />
+          </Key>
+          <Property Name="MovieListID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MovieID" Type="Int32" />
+          <Property Name="MovieName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MovieImg" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MovieDetail_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MovieDetail_2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MovieDetail_3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="MovieCrawlerModelStoreContainer" CdmEntityContainer="MovieCrawlerEntities">
-          <EntitySetMapping Name="MovieLists">
-            <EntityTypeMapping TypeName="MovieCrawlerModel.MovieList">
-              <MappingFragment StoreEntitySet="MovieList">
-                <ScalarProperty Name="MovieImg" ColumnName="MovieImg" />
-                <ScalarProperty Name="MovieName" ColumnName="MovieName" />
-                <ScalarProperty Name="MovieID" ColumnName="MovieID" />
-                <ScalarProperty Name="MovieListID" ColumnName="MovieListID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="MovieInfoes">
             <EntityTypeMapping TypeName="MovieCrawlerModel.MovieInfo">
               <MappingFragment StoreEntitySet="MovieInfo">
@@ -85,6 +81,19 @@
                 <ScalarProperty Name="MovieTheater" ColumnName="MovieTheater" />
                 <ScalarProperty Name="TheaterID" ColumnName="TheaterID" />
                 <ScalarProperty Name="MovieInfoID" ColumnName="MovieInfoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MovieLists">
+            <EntityTypeMapping TypeName="MovieCrawlerModel.MovieList">
+              <MappingFragment StoreEntitySet="MovieList">
+                <ScalarProperty Name="MovieDetail_3" ColumnName="MovieDetail_3" />
+                <ScalarProperty Name="MovieDetail_2" ColumnName="MovieDetail_2" />
+                <ScalarProperty Name="MovieDetail_1" ColumnName="MovieDetail_1" />
+                <ScalarProperty Name="MovieImg" ColumnName="MovieImg" />
+                <ScalarProperty Name="MovieName" ColumnName="MovieName" />
+                <ScalarProperty Name="MovieID" ColumnName="MovieID" />
+                <ScalarProperty Name="MovieListID" ColumnName="MovieListID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
