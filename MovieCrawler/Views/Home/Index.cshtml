@@ -12,11 +12,11 @@
 ============================-->
 <section id="intro">
     <div class="intro-container wow fadeIn">
-        <h1 class="mb-4 pb-0">The Annual<br><span>Marketing</span> Conference</h1>
-        <p class="mb-4 pb-0">10-12 December, Downtown Conference Center, New York</p>
-        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video"
+        <h1 class="mb-4 pb-0"><br><span>電影</span> 時刻表</h1>
+        <p class="mb-4 pb-0"></p>
+        <a href="https://www.youtube.com/watch?v=6ytcJdQpvVE" class="venobox play-btn mb-4" data-vbtype="video"
            data-autoplay="true"></a>
-        <a href="#about" class="about-btn scrollto">About The Event</a>
+        <a href="#about" class="about-btn scrollto">查看上映電影</a>
     </div>
 </section>
 
@@ -30,20 +30,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <h2>About The Event</h2>
-                    <p>
-                        Sed nam ut dolor qui repellendus iusto odit. Possimus inventore eveniet accusamus error amet eius aut
-                        accusantium et. Non odit consequatur repudiandae sequi ea odio molestiae. Enim possimus sunt inventore in
-                        est ut optio sequi unde.
-                    </p>
                 </div>
                 <div class="col-lg-3">
-                    <h3>Where</h3>
-                    <p>Downtown Conference Center, New York</p>
                 </div>
                 <div class="col-lg-3">
-                    <h3>When</h3>
-                    <p>Monday to Wednesday<br>10-12 December</p>
                 </div>
             </div>
         </div>
@@ -55,8 +45,8 @@
     <section id="speakers" class="wow fadeInUp">
         <div class="container">
             <div class="section-header">
-                <h2>Event Speakers</h2>
-                <p>Here are some of our speakers</p>
+                <h2>上映電影</h2>
+                <p>即時資訊</p>
             </div>
 
             <div class="row">
@@ -65,16 +55,15 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="speaker">
 
-
                                 <img src="~/image/@item.MovieImg" alt="Speaker 1" class="img-fluid" />
                                 <div class="details">
                                     <h3><a href="/Home/Detail?MovieID=@item.MovieID">@item.MovieName</a></h3>
-                                    <p>Brenden Legros</p>
+                                    @*<p>Brenden Legros</p>*@
                                     <div class="social">
-                                        <a href=""><i class="fa fa-twitter"></i></a>
+                                        @*<a href=""><i class="fa fa-twitter"></i></a>
                                         <a href=""><i class="fa fa-facebook"></i></a>
                                         <a href=""><i class="fa fa-google-plus"></i></a>
-                                        <a href=""><i class="fa fa-linkedin"></i></a>
+                                        <a href=""><i class="fa fa-linkedin"></i></a>*@
                                     </div>
                                 </div>
 
@@ -97,7 +86,7 @@
 
             </div>
 
-            <ul class="nav nav-tabs" role="tablist">
+            @*<ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link active" href="#day-1" role="tab" data-toggle="tab">Day 1</a>
                 </li>
@@ -107,7 +96,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#day-3" role="tab" data-toggle="tab">Day 3</a>
                 </li>
-            </ul>
+            </ul>*@
 
             <h3 class="sub-heading"></h3>
             <div class="form-row">
@@ -136,9 +125,10 @@
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label" for="datepicker">選擇日期</label>
-                <button id="clear" type="button" class="btn">清除</button>
+               
                 <div class="col-md-6">
                     <input id="datepicker" name="date" class="form-control input-md" value="" readonly style="background-color:white" ;>
+                    <button id="clear" type="button" class="btn">清除</button>
                 </div>
             </div>
             <div class="tab-content row justify-content-center">
@@ -146,315 +136,14 @@
                 <!-- Schdule Day 1 -->
                 <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
 
-                    @*<div class="row schedule-item">
-                            <div class="col-md-2"><time>09:30 AM</time></div>
-                            <div class="col-md-10">
-                                <h4>Registration</h4>
-                                <p>Fugit voluptas iusto maiores temporibus autem numquam magnam.</p>
-                            </div>
-                        </div>*@
-
-                    @*<div class="row schedule-item">
-                            <div class="col-md-2"><time>123</time></div>
-                            <div class="col-md-10">
-                                <div class="speaker">
-                                    <img src="~/image/123">
-                                </div>
-                                <h4>Keynote <span>Brenden Legros</span></h4>
-                                <p>Facere provident incidunt quos voluptas.</p>
-                            </div>
-                        </div>*@
-
-                    @*<div class="row schedule-item">
-                            <div class="col-md-2"><time>11:00 AM</time></div>
-                            <div class="col-md-10">
-                                <div class="speaker">
-                                    <img src="~/TheEvent/img/speakers/2.jpg" alt="Hubert Hirthe">
-                                </div>
-                                <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>
-                                <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
-                            </div>
-                        </div>
-
-                        <div class="row schedule-item">
-                            <div class="col-md-2"><time>12:00 AM</time></div>
-                            <div class="col-md-10">
-                                <div class="speaker">
-                                    <img src="~/TheEvent/img/speakers/3.jpg" alt="Cole Emmerich">
-                                </div>
-                                <h4>Explicabo et rerum quis et ut ea. <span>Cole Emmerich</span></h4>
-                                <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p>
-                            </div>
-                        </div>
-
-                        <div class="row schedule-item">
-                            <div class="col-md-2"><time>02:00 PM</time></div>
-                            <div class="col-md-10">
-                                <div class="speaker">
-                                    <img src="~/TheEvent/img/speakers/4.jpg" alt="Jack Christiansen">
-                                </div>
-                                <h4>Qui non qui vel amet culpa sequi. <span>Jack Christiansen</span></h4>
-                                <p>Nam ex distinctio voluptatem doloremque suscipit iusto.</p>
-                            </div>
-                        </div>
-
-                        <div class="row schedule-item">
-                            <div class="col-md-2"><time>03:00 PM</time></div>
-                            <div class="col-md-10">
-                                <div class="speaker">
-                                    <img src="~/TheEvent/img/speakers/5.jpg" alt="Alejandrin Littel">
-                                </div>
-                                <h4>Quos ratione neque expedita asperiores. <span>Alejandrin Littel</span></h4>
-                                <p>Eligendi quo eveniet est nobis et ad temporibus odio quo.</p>
-                            </div>
-                        </div>
-
-                        <div class="row schedule-item">
-                            <div class="col-md-2"><time>04:00 PM</time></div>
-                            <div class="col-md-10">
-                                <div class="speaker">
-                                    <img src="~/TheEvent/img/speakers/6.jpg" alt="Willow Trantow">
-                                </div>
-                                <h4>Quo qui praesentium nesciunt <span>Willow Trantow</span></h4>
-                                <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                            </div>
-                        </div>*@
-
                 </div>
-                <!-- End Schdule Day 1 -->
-                <!-- Schdule Day 2 -->
-                <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2">
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>10:00 AM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="~/TheEvent/img/speakers/1.jpg" alt="Brenden Legros">
-                            </div>
-                            <h4>Libero corrupti explicabo itaque. <span>Brenden Legros</span></h4>
-                            <p>Facere provident incidunt quos voluptas.</p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>11:00 AM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="~/TheEvent/img/speakers/2.jpg" alt="Hubert Hirthe">
-                            </div>
-                            <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>
-                            <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>12:00 AM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="~/TheEvent/img/speakers/3.jpg" alt="Cole Emmerich">
-                            </div>
-                            <h4>Explicabo et rerum quis et ut ea. <span>Cole Emmerich</span></h4>
-                            <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>02:00 PM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="~/TheEvent/img/speakers/4.jpg" alt="Jack Christiansen">
-                            </div>
-                            <h4>Qui non qui vel amet culpa sequi. <span>Jack Christiansen</span></h4>
-                            <p>Nam ex distinctio voluptatem doloremque suscipit iusto.</p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>03:00 PM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="~/TheEvent/img/speakers/5.jpg" alt="Alejandrin Littel">
-                            </div>
-                            <h4>Quos ratione neque expedita asperiores. <span>Alejandrin Littel</span></h4>
-                            <p>Eligendi quo eveniet est nobis et ad temporibus odio quo.</p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>04:00 PM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="~/TheEvent/img/speakers/6.jpg" alt="Willow Trantow">
-                            </div>
-                            <h4>Quo qui praesentium nesciunt <span>Willow Trantow</span></h4>
-                            <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- End Schdule Day 2 -->
-                <!-- Schdule Day 3 -->
-                <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-3">
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>10:00 AM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="~/TheEvent/img/speakers/2.jpg" alt="Hubert Hirthe">
-                            </div>
-                            <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>
-                            <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>11:00 AM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="~/TheEvent/img/speakers/3.jpg" alt="Cole Emmerich">
-                            </div>
-                            <h4>Explicabo et rerum quis et ut ea. <span>Cole Emmerich</span></h4>
-                            <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>12:00 AM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="~/TheEvent/img/speakers/1.jpg" alt="Brenden Legros">
-                            </div>
-                            <h4>Libero corrupti explicabo itaque. <span>Brenden Legros</span></h4>
-                            <p>Facere provident incidunt quos voluptas.</p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>02:00 PM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="~/TheEvent/img/speakers/4.jpg" alt="Jack Christiansen">
-                            </div>
-                            <h4>Qui non qui vel amet culpa sequi. <span>Jack Christiansen</span></h4>
-                            <p>Nam ex distinctio voluptatem doloremque suscipit iusto.</p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>03:00 PM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="~/TheEvent/img/speakers/5.jpg" alt="Alejandrin Littel">
-                            </div>
-                            <h4>Quos ratione neque expedita asperiores. <span>Alejandrin Littel</span></h4>
-                            <p>Eligendi quo eveniet est nobis et ad temporibus odio quo.</p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>04:00 PM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="~/TheEvent/img/speakers/6.jpg" alt="Willow Trantow">
-                            </div>
-                            <h4>Quo qui praesentium nesciunt <span>Willow Trantow</span></h4>
-                            <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- End Schdule Day 2 -->
-
             </div>
-
         </div>
-
     </section>
 
     <!--==========================
       Venue Section
     ============================-->
-    <section id="venue" class="wow fadeInUp">
-
-        <div class="container-fluid">
-
-            <div class="section-header">
-                <h2>Event Venue</h2>
-                <p>Event venue location info and gallery</p>
-            </div>
-        </div>
-
-        <div class="container-fluid venue-gallery-container">
-            <div class="row no-gutters">
-
-                <div class="col-lg-3 col-md-4">
-                    <div class="venue-gallery">
-                        <a href="img/venue-gallery/1.jpg" class="venobox" data-gall="venue-gallery">
-                            <img src="~/TheEvent/img/venue-gallery/1.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4">
-                    <div class="venue-gallery">
-                        <a href="img/venue-gallery/2.jpg" class="venobox" data-gall="venue-gallery">
-                            <img src="~/TheEvent/img/venue-gallery/2.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4">
-                    <div class="venue-gallery">
-                        <a href="img/venue-gallery/3.jpg" class="venobox" data-gall="venue-gallery">
-                            <img src="~/TheEvent/img/venue-gallery/3.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4">
-                    <div class="venue-gallery">
-                        <a href="img/venue-gallery/4.jpg" class="venobox" data-gall="venue-gallery">
-                            <img src="~/TheEvent/img/venue-gallery/4.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4">
-                    <div class="venue-gallery">
-                        <a href="img/venue-gallery/5.jpg" class="venobox" data-gall="venue-gallery">
-                            <img src="~/TheEvent/img/venue-gallery/5.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4">
-                    <div class="venue-gallery">
-                        <a href="img/venue-gallery/6.jpg" class="venobox" data-gall="venue-gallery">
-                            <img src="~/TheEvent/img/venue-gallery/6.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4">
-                    <div class="venue-gallery">
-                        <a href="img/venue-gallery/7.jpg" class="venobox" data-gall="venue-gallery">
-                            <img src="~/TheEvent/img/venue-gallery/7.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4">
-                    <div class="venue-gallery">
-                        <a href="img/venue-gallery/8.jpg" class="venobox" data-gall="venue-gallery">
-                            <img src="~/TheEvent/img/venue-gallery/8.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-    </section>
 </main>
 
 <script>
@@ -549,8 +238,8 @@
                         '<div class="speaker">' +
                         '<img src="/image/' + data[i].MovieImg + '" alt="Brenden Legros">' +
                         '</div >' +
-                        '<h4>' + data[i].MovieTheater + '<span>' + '</span></h4>' +
-                        '<p>' + data[i].MovieName + '</p>' +
+                        '<h3>' + data[i].MovieName + '<span>' + '</span></h3>' +
+                        '<h4>' + data[i].MovieTheater + '</h4>' +
                         '</div >' +
                         '</div>'
                     )
@@ -558,7 +247,6 @@
 
             }
         });
-
     }
 
 </script>

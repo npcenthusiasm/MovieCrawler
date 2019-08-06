@@ -16,14 +16,6 @@ namespace MovieCrawler.Controllers
                         select o;
             return View(query.ToList());
         }
-        //[HttpPost]
-        //public ActionResult Index(int MovieID)
-        //{
-        //    var query = from o in db.MovieInfoes
-        //                where o.MovieID==MovieID
-        //                select o;
-        //    return View(query.ToList());
-        //}
 
         public ActionResult items(int MovieID)
         {
