@@ -9,6 +9,6 @@
 ![](https://github.com/npcenthusiasm/MovieCrawler/blob/master/Movie2.png)
 
 ### 內容
-- c# 撰寫爬蟲程式，將時刻表資訊存入SQL
+- ASP.NET MVC c# 撰寫爬蟲程式，將時刻表資訊存入SQL
 - 套用Bootstrap TheEvent版型
 - jQuery +ajax 更新查詢畫面
